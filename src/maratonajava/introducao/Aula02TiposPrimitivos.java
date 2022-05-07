@@ -12,5 +12,8 @@ public class Aula02TiposPrimitivos {
         short idadeShort = 10;
         long numeroMuitoGrande = 100000;
         boolean valorLogico = true;
+
+        //Não é primitivo.
+        String nome = "Fulano";
     }
 }
