@@ -2,8 +2,16 @@ package maratonajava.javacore.Ycolecoes.test;
 
 import maratonajava.javacore.Ycolecoes.diminio.Manga;
 
+import java.util.Comparator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
+
+class MangaPorPrecoComparator implements Comparator<Manga> {
+    @Override
+    public int compare(Manga manga1, Manga manga2) {
+        return Double.compare(manga1.getPreco(), manga2.getPreco());
+    }
+}
 
 public class NavigableSetTest {
     /*
@@ -23,15 +31,16 @@ public class NavigableSetTest {
         A criação da coleção seria assim: NavigableSet<Manga> mangas = new TreeSet<>(new MangaPorNomeComparator());
         Pois o contrutor da classe TreeSet também espera um Comparator.
      */
+
     public static void main(String[] args) {
-        NavigableSet<Manga> mangas = new TreeSet<>();
+        NavigableSet<Manga> mangas = new TreeSet<>(new MangaPorPrecoComparator());
         mangas.add(new Manga(3L, "Naruto", 20.00, 5));
         mangas.add(new Manga(1L, "Dragon Ball Z", 21.00, 12));
         mangas.add(new Manga(2L, "One Piece", 20.50, 0));
-        mangas.add(new Manga(10L, "Attack on Titan", 21.00, 12));
+        mangas.add(new Manga(10L, "Attack on Titan", 20.99, 12));
 
-        //pode-se inverter a
-        for(Manga manga : mangas){
+        //pode-se ordenar de forma decrescente usando descendingSet() na coleção na assinatura do for. Exemplo: mangas.descendingSet()
+        for(Manga manga : mangas.descendingSet()){
             System.out.println(manga);
         }
 
