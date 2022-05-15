@@ -3,7 +3,6 @@ package maratonajava.javacore.Ycolecoes.test;
 import maratonajava.javacore.Ycolecoes.diminio.Manga;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class SetTest01 {
