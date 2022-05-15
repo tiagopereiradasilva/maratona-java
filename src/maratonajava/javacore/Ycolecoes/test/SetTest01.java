@@ -9,7 +9,7 @@ import java.util.Set;
 public class SetTest01 {
     public static void main(String[] args) {
         /*
-         * A Collection Set não aceita valores duplicados. (Ao inserir um valor duplicad, ele simplesmente é ignorado)
+         * A Collection Set "Set<Manga> mangas = new HashSet<>()" não aceita valores duplicados. (Ao inserir um valor duplicado, ele simplesmente é ignorado)
          * Ela utiliza o hash para ordenar seus elementos, sendo assim, o ideal é ter o método "hashCode" sobrescrito no
          * modelo que é o Tipo da lista, no exemplo é a classe Mangá.
          * A partir disso, ela cria sua própria forma de organização dos elemenos, não obdecendo, necessariamente, a ordem
